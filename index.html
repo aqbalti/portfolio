@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awais Ali | AI & Generative AI Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#07090e',
+                            card: '#0e131f',
+                            border: '#1e293b',
+                            cyan: '#06b6d4',
+                            glow: '#3b82f6',
+                            purple: '#a855f7',
+                            pink: '#ec4899',
+                            emerald: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(6, 182, 212, 0.2)' },
+                            '100%': { boxShadow: '0 0 25px rgba(6, 182, 212, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #07090e;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(14, 19, 31, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between relative">
+
+    <!-- Background Grid Lines & Glow Orbs -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="w-full h-full opacity-[0.03]" style="background-image: linear-gradient(#38bdf8 1px, transparent 1px), linear-gradient(90deg, #38bdf8 1px, transparent 1px); background-size: 40px 40px;"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center font-mono font-bold text-lg text-black shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    AA
+                </div>
+                <div>
+                    <span class="font-bold tracking-wider text-slate-100 group-hover:text-cyan-400 transition-colors">AWAIS ALI</span>
+                    <span class="text-xs text-cyan-400 font-mono block">AI_DEV // PORTFOLIO</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">01.</span> About</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">02.</span> Experience</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">03.</span> Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">04.</span> Projects</a>
+                <a href="#certifications" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">05.</span> Certs</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors flex items-center gap-1"><span class="text-cyan-500 font-mono">06.</span> Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="adminAuthBtn" onclick="openAdminModal()" class="px-4 py-2 text-xs font-mono font-semibold rounded-lg border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-lock"></i> <span id="adminBtnText">Admin Console</span>
+                </button>
+                <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-b border-slate-800 px-6 py-4 space-y-3 font-mono text-sm">
+            <a href="#about" onclick="closeMobileMenu()" class="block hover:text-cyan-400">01. About</a>
+            <a href="#experience" onclick="closeMobileMenu()" class="block hover:text-cyan-400">02. Experience</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="block hover:text-cyan-400">03. Skills</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="block hover:text-cyan-400">04. Projects</a>
+            <a href="#certifications" onclick="closeMobileMenu()" class="block hover:text-cyan-400">05. Certs</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block hover:text-cyan-400">06. Contact</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 space-y-28 py-10">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="pt-10 lg:pt-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-7/12 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    <span>Available for AI Engineering & GenAI Roles</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none">
+                    Hi, I'm <span id="hero-name" class="text-gradient-cyan">Awais Ali</span>
+                </h1>
+
+                <h2 id="hero-title" class="text-xl sm:text-2xl font-semibold text-slate-300 font-mono">
+                    AI / Generative AI Developer
+                </h2>
+
+                <p id="hero-summary" class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    Passionate Artificial Intelligence student specializing in LLMs, RAG, NLP, Computer Vision, and AI Automation. Building intelligent full-stack systems, knowledge bases, and multi-agent workflows.
+                </p>
+
+                <!-- Social Links -->
+                <div id="hero-socials" class="flex flex-wrap items-center gap-4 text-sm text-slate-300 font-mono pt-2">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Hero CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i> Explore Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3.5 rounded-xl glass-panel text-slate-200 font-semibold hover:bg-slate-800/80 hover:text-cyan-400 border border-slate-700/80 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                    </a>
+                    <button onclick="openAdminModal()" class="px-6 py-3.5 rounded-xl border border-purple-500/40 text-purple-300 font-semibold hover:bg-purple-950/40 hover:border-purple-400 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-sliders"></i> Admin Control
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Futuristic Interactive Visual -->
+            <div class="lg:w-5/12 w-full flex justify-center">
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 glass-panel rounded-3xl p-6 flex flex-col justify-between border border-cyan-500/30 shadow-2xl shadow-cyan-900/20 group">
+                    <div class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-400 flex items-center justify-center text-cyan-400 text-xs">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <span class="text-xs font-mono text-slate-400">SYSTEM_STATUS</span>
+                            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> ONLINE
+                            </span>
+                        </div>
+                        <div class="font-mono text-xs text-slate-300 space-y-2">
+                            <p class="text-cyan-400">&gt; Loading Neural Core...</p>
+                            <p>&gt; RAG Engines: Active</p>
+                            <p>&gt; Vector DB: ChromaDB Linked</p>
+                            <p>&gt; Agent Orchestration: LangChain</p>
+                            <p class="text-purple-400">&gt; Status: Ready for Deployment</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                        <span>Islamabad, PK</span>
+                        <span class="text-cyan-400 font-bold">BS AI Student</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT & EDUCATION SECTION -->
+        <section id="about" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <span class="text-cyan-400 font-mono text-xl">01.</span>
+                <h2 class="text-3xl font-bold text-white tracking-wide">About & Background</h2>
+                <div class="h-px bg-slate-800 flex-grow ml-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Professional Bio -->
+                <div class="lg:col-span-2 glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                    <h3 class="text-xl font-semibold text-cyan-400 flex items-center gap-2">
+                        <i class="fa-solid fa-user-astronaut"></i> Professional Overview
+                    </h3>
+                    <p id="about-text" class="text-slate-300 leading-relaxed space-y-4">
+                        <!-- Populated dynamically -->
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800 font-mono text-xs">
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-400 block mb-1">Languages</span>
+                            <span class="text-slate-200 font-bold">English, Urdu, Balti</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-400 block mb-1">Primary Focus</span>
+                            <span class="text-cyan-400 font-bold">GenAI / RAG / LLMs</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-400 block mb-1">Interests</span>
+                            <span class="text-purple-400 font-bold">AI Automation & Volleyball</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Cards -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-cyan-400 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap"></i> Education Timeline
+                    </h3>
+                    <div id="education-list" class="space-y-4">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <span class="text-cyan-400 font-mono text-xl">02.</span>
+                <h2 class="text-3xl font-bold text-white tracking-wide">Work Experience</h2>
+                <div class="h-px bg-slate-800 flex-grow ml-4"></div>
+            </div>
+
+            <div id="experience-container" class="space-y-6">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX SECTION -->
+        <section id="skills" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <span class="text-cyan-400 font-mono text-xl">03.</span>
+                <h2 class="text-3xl font-bold text-white tracking-wide">Technical Skillset Matrix</h2>
+                <div class="h-px bg-slate-800 flex-grow ml-4"></div>
+            </div>
+
+            <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-cyan-400 font-mono text-xl">04.</span>
+                    <h2 class="text-3xl font-bold text-white tracking-wide">Featured AI Projects</h2>
+                </div>
+                
+                <!-- Search & Filters -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative">
+                        <input type="text" id="projectSearchInput" placeholder="Search tech or title..." onkeyup="filterProjects()" class="w-full sm:w-64 px-4 py-2 pl-9 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
+                    </div>
+                    
+                    <div class="flex gap-1 overflow-x-auto pb-1 sm:pb-0" id="projectCategoryFilters">
+                        <button onclick="setProjectFilter('All')" class="filter-btn active-filter px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-cyan-500 text-black font-semibold">All</button>
+                        <button onclick="setProjectFilter('GenAI/RAG')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-slate-800 text-slate-300 hover:text-white">GenAI/RAG</button>
+                        <button onclick="setProjectFilter('ML/Vision')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-slate-800 text-slate-300 hover:text-white">ML/Vision</button>
+                        <button onclick="setProjectFilter('Voice/App')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-slate-800 text-slate-300 hover:text-white">Voice/App</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <span class="text-cyan-400 font-mono text-xl">05.</span>
+                <h2 class="text-3xl font-bold text-white tracking-wide">Certifications & Hackathons</h2>
+                <div class="h-px bg-slate-800 flex-grow ml-4"></div>
+            </div>
+
+            <div id="certs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="space-y-8 pt-10">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto border border-cyan-500/30 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <span class="text-cyan-400 font-mono text-sm uppercase tracking-widest block mb-2">06. What's Next?</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">Let's Build Intelligent Systems</h2>
+                <p class="text-slate-400 max-w-xl mx-auto mb-8 text-sm sm:text-base">
+                    Whether you need to integrate LLM pipelines, build multimodal RAG architectures, or develop AI applications, my inbox is always open.
+                </p>
+
+                <div id="contact-info-hub" class="flex flex-wrap justify-center gap-6 mb-8 text-sm font-mono">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <a href="mailto:qarnibalti129@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold text-lg hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-cyan-500/20 transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-envelope"></i> Send Email
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-panel border-t border-slate-800 mt-20 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+            <div>
+                Designed & Built for <span class="text-cyan-400 font-semibold">Awais Ali</span> &copy; 2026
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openAdminModal()" class="hover:text-cyan-400 transition-colors">
+                    <i class="fa-solid fa-lock text-slate-400"></i> Admin Access
+                </button>
+                <span>|</span>
+                <button onclick="resetDataToDefault()" class="hover:text-pink-400 transition-colors">
+                    <i class="fa-solid fa-rotate-left text-pink-500"></i> Reset Default Data
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ADMIN MODAL -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-panel w-full max-w-4xl rounded-2xl border border-cyan-500/40 p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto my-auto shadow-2xl relative">
+            
+            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- AUTH SCREEN -->
+            <div id="adminAuthScreen" class="space-y-6 py-6 text-center max-w-md mx-auto">
+                <div class="w-16 h-16 bg-cyan-950/80 border border-cyan-400 rounded-2xl mx-auto flex items-center justify-center text-cyan-400 text-2xl">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Admin Authentication</h3>
+                    <p class="text-xs text-slate-400 font-mono mt-1">Enter key to unlock dynamic portfolio controls</p>
+                </div>
+                <div class="space-y-4">
+                    <input type="password" id="adminPasswordInput" placeholder="Enter password" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-cyan-400">
+                    <div id="adminAuthError" class="text-pink-400 text-xs hidden font-mono">Incorrect password. Please try again.</div>
+                    <button onclick="authenticateAdmin()" class="w-full py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition-all font-mono text-sm">
+                        Unlock Dashboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- DASHBOARD CONTENT (Hidden until auth) -->
+            <div id="adminDashboardScreen" class="hidden space-y-8">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-cyan-400"></i> Portfolio Control Center
+                        </h3>
+                        <p class="text-xs text-slate-400 font-mono">Real-time dynamic updates saved to LocalStorage</p>
+                    </div>
+                    <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-mono">
+                        <i class="fa-solid fa-right-from-bracket"></i> Lock
+                    </button>
+                </div>
+
+                <!-- Admin Tabs -->
+                <div class="flex border-b border-slate-800 gap-4 font-mono text-xs overflow-x-auto">
+                    <button onclick="switchAdminTab('projects')" id="tabBtn-projects" class="admin-tab border-b-2 border-cyan-400 text-cyan-400 pb-2 px-1 font-bold">Projects Manager</button>
+                    <button onclick="switchAdminTab('skills')" id="tabBtn-skills" class="admin-tab border-b-2 border-transparent text-slate-400 hover:text-white pb-2 px-1">Skills Manager</button>
+                    <button onclick="switchAdminTab('bio')" id="tabBtn-bio" class="admin-tab border-b-2 border-transparent text-slate-400 hover:text-white pb-2 px-1">Bio & Contact</button>
+                </div>
+
+                <!-- TAB 1: PROJECTS MANAGER -->
+                <div id="adminTab-projects" class="space-y-6">
+                    <div class="glass-panel p-4 rounded-xl border border-slate-800 space-y-4">
+                        <h4 class="text-sm font-semibold text-cyan-400 font-mono flex items-center gap-2">
+                            <i class="fa-solid fa-plus-circle"></i> Add / Edit Project
+                        </h4>
+                        <input type="hidden" id="editProjectId" value="">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="projTitle" placeholder="Project Title" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            <input type="text" id="projCategory" placeholder="Category (e.g. GenAI/RAG, ML/Vision, Voice/App)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <textarea id="projDesc" placeholder="Project Description" rows="3" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white"></textarea>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="projTech" placeholder="Technologies (comma separated)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            <input type="text" id="projGithub" placeholder="GitHub Repository URL" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div class="flex justify-end gap-3 pt-2">
+                            <button onclick="clearProjectForm()" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">Cancel/Clear</button>
+                            <button onclick="saveProject()" class="px-5 py-2 rounded-lg bg-cyan-500 text-black font-semibold text-xs font-mono hover:bg-cyan-400">Save Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project List -->
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-mono text-slate-400">CURRENT PROJECTS</h4>
+                        <div id="adminProjectsList" class="space-y-2">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: SKILLS MANAGER -->
+                <div id="adminTab-skills" class="hidden space-y-6">
+                    <div class="glass-panel p-4 rounded-xl border border-slate-800 space-y-4">
+                        <h4 class="text-sm font-semibold text-cyan-400 font-mono">Add Skill Tag</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <select id="skillCategorySelect" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                                <option value="Programming & Core">Programming & Core</option>
+                                <option value="GenAI, LLMs & RAG">GenAI, LLMs & RAG</option>
+                                <option value="AI, ML & Vision">AI, ML & Vision</option>
+                                <option value="APIs & Development">APIs & Development</option>
+                                <option value="Data & Tools">Data & Tools</option>
+                            </select>
+                            <input type="text" id="newSkillName" placeholder="Skill Name (e.g., PyTorch)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white sm:col-span-2">
+                        </div>
+                        <button onclick="addSkillTag()" class="px-5 py-2 rounded-lg bg-cyan-500 text-black font-semibold text-xs font-mono hover:bg-cyan-400">Add Skill Tag</button>
+                    </div>
+
+                    <div id="adminSkillsList" class="space-y-4">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- TAB 3: BIO & CONTACT -->
+                <div id="adminTab-bio" class="hidden space-y-6">
+                    <div class="glass-panel p-4 rounded-xl border border-slate-800 space-y-4">
+                        <h4 class="text-sm font-semibold text-cyan-400 font-mono">Header & Summary</h4>
+                        <div>
+                            <label class="text-xs text-slate-400 font-mono block mb-1">Full Name</label>
+                            <input type="text" id="adminBioName" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-400 font-mono block mb-1">Title</label>
+                            <input type="text" id="adminBioTitle" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs text-slate-400 font-mono block mb-1">Summary Paragraph</label>
+                            <textarea id="adminBioSummary" rows="4" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white"></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs text-slate-400 font-mono block mb-1">Email</label>
+                                <input type="text" id="adminBioEmail" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 font-mono block mb-1">Phone</label>
+                                <input type="text" id="adminBioPhone" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 font-mono block mb-1">GitHub URL</label>
+                                <input type="text" id="adminBioGithub" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 font-mono block mb-1">LinkedIn URL</label>
+                                <input type="text" id="adminBioLinkedin" class="w-full p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white">
+                            </div>
+                        </div>
+                        <button onclick="saveBioData()" class="px-5 py-2 rounded-lg bg-cyan-500 text-black font-semibold text-xs font-mono hover:bg-cyan-400">Save Bio & Contact Details</button>
+                    </div>
+                </div>
+
+                <!-- Footer Admin Actions -->
+                <div class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs font-mono">
+                    <button onclick="resetDataToDefault()" class="text-pink-400 hover:underline">
+                        <i class="fa-solid fa-arrows-rotate"></i> Reset All Data to CV Defaults
+                    </button>
+                    <button onclick="closeAdminModal()" class="px-4 py-2 bg-slate-800 rounded-lg text-slate-300">
+                        Close Console
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN DATA ENGINE & JAVASCRIPT LOGIC -->
+    <script>
+        // DEFAULT CV DATA ARCHITECTURE
+        const DEFAULT_PORTFOLIO_DATA = {
+            profile: {
+                name: "Awais Ali",
+                title: "AI / Generative AI Developer",
+                tagline: "Building autonomous multi-agent chambers, multimodal RAG, and AI applications.",
+                location: "Islamabad, Pakistan",
+                phone: "+923-489915335",
+                email: "qarnibalti129@gmail.com",
+                linkedin: "https://linkedin.com/in/awais-ali-b84b01344",
+                github: "https://github.com/awais-ali-b84b01344",
+                summary: "Passionate Artificial Intelligence student with hands-on experience in Generative AI, LLMs, RAG, NLP, Computer Vision, and AI automation. Strong foundation in Python and C++, building AI-powered applications, API workflows, knowledge-based systems, and intelligent web apps."
+            },
+            education: [
+                {
+                    degree: "BS in Artificial Intelligence",
+                    institution: "Ibadat International University, Islamabad",
+                    period: "2024 – Present",
+                    icon: "fa-graduation-cap"
+                },
+                {
+                    degree: "Intermediate with ICS",
+                    institution: "Public School and College, Skardu",
+                    period: "2022 – 2024",
+                    icon: "fa-school"
+                },
+                {
+                    degree: "Matriculation with Science",
+                    institution: "Government Boys High School, Kharkoo",
+                    period: "2019 – 2021",
+                    icon: "fa-book-bookmark"
+                }
+            ],
+            experience: [
+                {
+                    role: "AI / ML Intern",
+                    company: "Zenvyro Labs",
+                    period: "2026",
+                    bullets: [
+                        "Developed AI-powered applications involving LLMs, RAG, multimodal AI, voice AI, and intelligent automation workflows.",
+                        "Worked on an Autonomous AI Debate Chamber integrating multi-model LLMs with automated ML-based evaluation via Flask and WebSockets.",
+                        "Built a Multimodal RAG system for querying text books and comic/manga content using vector retrieval, metadata references, and OCR.",
+                        "Developed Zenvyrolabs Voice Studio, a full-stack Flask app for voice management, local speech tech, and AI content generation."
+                    ]
+                }
+            ],
+            skills: [
+                { category: "Programming & Core", items: ["Python", "C++", "OOP", "Data Structures & Algorithms"] },
+                { category: "GenAI, LLMs & RAG", items: ["Large Language Models", "Prompt Engineering", "RAG", "Knowledge Bases", "AI Agents", "Embeddings", "ChromaDB", "LangChain"] },
+                { category: "AI, ML & Vision", items: ["Deep Learning", "Machine Learning", "NLP", "Computer Vision", "TensorFlow/Keras", "Scikit-learn"] },
+                { category: "APIs & Development", items: ["OpenRouter", "Flask", "REST APIs", "Streamlit", "WebSockets", "HTML", "CSS", "JavaScript", "Git/GitHub"] },
+                { category: "Data & Tools", items: ["Pandas", "NumPy", "MySQL", "Microsoft Access", "OCR", "Document Processing"] }
+            ],
+            projects: [
+                {
+                    id: "proj_1",
+                    title: "HireSense AI",
+                    category: "GenAI/RAG",
+                    description: "Intelligent adaptive interview preparation platform combining RAG, LLMs, and NLP to evaluate candidate resumes and generate dynamic questions with emotion tracking.",
+                    tech: ["Python", "Streamlit", "OpenRouter", "RAG", "NLP"],
+                    github: "https://github.com/awais-ali-b84b01344"
+                },
+                {
+                    id: "proj_2",
+                    title: "Autonomous AI Debate Chamber",
+                    category: "GenAI/RAG",
+                    description: "Real-time multi-agent AI debate system featuring streaming responses and an automated ML judge assessing conversational metrics.",
+                    tech: ["Python", "Flask", "WebSockets", "LLMs", "Multi-Agent"],
+                    github: "https://github.com/aqbalti/Autonomous_AI_Debate_Chamber"
+                },
+                {
+                    id: "proj_3",
+                    title: "Zenvyro Labs Multimodal RAG",
+                    category: "ML/Vision",
+                    description: "Page-aware retrieval system utilizing document chunking, metadata injection, and OCR for multi-format book and comic analysis.",
+                    tech: ["Python", "LangChain", "ChromaDB", "OCR", "Multimodal"],
+                    github: "https://github.com/aqbalti/Autonomous_AI_Debate_Chamber"
+                },
+                {
+                    id: "proj_4",
+                    title: "Zenvyro Labs Voice Studio",
+                    category: "Voice/App",
+                    description: "Full-stack voice application implementing podcast-style AI content generation and local speech integrations.",
+                    tech: ["Python", "Flask", "eSpeak NG", "JavaScript", "Web Audio"],
+                    github: "https://github.com/aqbalti/zenvyro_voice_studio"
+                }
+            ],
+            certifications: [
+                { title: "AI & ML Internship Completion", issuer: "Zenvyro Labs", year: "2026", type: "Experience" },
+                { title: "Google Antigravity National Hackathon Participant (AI Seekhoo)", issuer: "Google / AI Seekhoo", year: "2026", type: "Hackathon" },
+                { title: "Advanced Python & ML Foundations", issuer: "Uniathena", year: "2026", type: "Coursework" },
+                { title: "Python Data Structures & Web Data", issuer: "Coursera", year: "2026", type: "Specialization" }
+            ]
+        };
+
+        // GLOBAL APP STATE
+        let appData = {};
+        let currentFilter = 'All';
+        let isAdminLoggedIn = false;
+
+        // INITIALIZATION
+        window.onload = function() {
+            loadState();
+            renderPortfolio();
+        };
+
+        // LOCALSTORAGE MANAGEMENT
+        function loadState() {
+            const saved = localStorage.getItem('awais_ali_portfolio_db');
+            if (saved) {
+                try {
+                    appData = JSON.parse(saved);
+                } catch (e) {
+                    appData = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA));
+                }
+            } else {
+                appData = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA));
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem('awais_ali_portfolio_db', JSON.stringify(appData));
+            renderPortfolio();
+        }
+
+        function resetDataToDefault() {
+            if (confirm("Reset portfolio back to Awais Ali's default CV data? Any custom edits will be cleared.")) {
+                appData = JSON.parse(JSON.stringify(DEFAULT_PORTFOLIO_DATA));
+                saveState();
+                if (isAdminLoggedIn) renderAdminDashboard();
+            }
+        }
+
+        // RENDER ENGINE
+        function renderPortfolio() {
+            // Profile & Hero
+            document.getElementById('hero-name').innerText = appData.profile.name;
+            document.getElementById('hero-title').innerText = appData.profile.title;
+            document.getElementById('hero-summary').innerText = appData.profile.summary;
+            document.getElementById('about-text').innerText = appData.profile.summary;
+
+            // Social links
+            const socialsHtml = `
+                <a href="${appData.profile.github}" target="_blank" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-github text-cyan-400"></i> GitHub</a>
+                <a href="${appData.profile.linkedin}" target="_blank" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-linkedin text-cyan-400"></i> LinkedIn</a>
+                <a href="mailto:${appData.profile.email}" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-cyan-400"></i> Email</a>
+                <span class="text-slate-500"><i class="fa-solid fa-location-dot text-slate-400"></i> ${appData.profile.location}</span>
+            `;
+            document.getElementById('hero-socials').innerHTML = socialsHtml;
+
+            // Education
+            const eduHtml = appData.education.map(edu => `
+                <div class="glass-panel p-4 rounded-xl border border-slate-800/80 hover:border-cyan-500/30 transition-all">
+                    <div class="flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-sm mt-0.5">
+                            <i class="fa-solid ${edu.icon}"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-100 text-sm">${edu.degree}</h4>
+                            <p class="text-xs text-slate-400">${edu.institution}</p>
+                            <span class="inline-block mt-1 text-[10px] font-mono text-cyan-400 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-800/40">${edu.period}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('education-list').innerHTML = eduHtml;
+
+            // Experience
+            const expHtml = appData.experience.map(exp => `
+                <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                ${exp.role} <span class="text-cyan-400 font-mono text-sm">@ ${exp.company}</span>
+                            </h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono w-max">
+                            ${exp.period}
+                        </span>
+                    </div>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        ${exp.bullets.map(b => `
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-angle-right text-cyan-400 mt-1"></i>
+                                <span>${b}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `).join('');
+            document.getElementById('experience-container').innerHTML = expHtml;
+
+            // Skills Grid
+            const skillsHtml = appData.skills.map(skillGroup => `
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4 hover:border-cyan-500/30 transition-all">
+                    <h3 class="text-sm font-mono font-bold text-cyan-400 tracking-wide uppercase border-b border-slate-800 pb-2">
+                        ${skillGroup.category}
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${skillGroup.items.map(s => `
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-xs font-mono text-slate-200 hover:border-cyan-400 transition-colors">
+                                ${s}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('skills-grid').innerHTML = skillsHtml;
+
+            // Render Projects with Filters
+            renderFilteredProjects();
+
+            // Certifications Grid
+            const certsHtml = appData.certifications.map(cert => `
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3 relative overflow-hidden group">
+                    <div class="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 text-base">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-purple-300 border border-purple-500/20">${cert.type}</span>
+                    <h4 class="font-bold text-white text-base leading-snug">${cert.title}</h4>
+                    <div class="flex justify-between items-center text-xs text-slate-400 font-mono pt-2 border-t border-slate-800/80">
+                        <span>${cert.issuer}</span>
+                        <span class="text-cyan-400">${cert.year}</span>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('certs-grid').innerHTML = certsHtml;
+
+            // Contact Hub
+            document.getElementById('contact-info-hub').innerHTML = `
+                <a href="mailto:${appData.profile.email}" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-cyan-400"></i> ${appData.profile.email}
+                </a>
+                <a href="tel:${appData.profile.phone}" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-cyan-400"></i> ${appData.profile.phone}
+                </a>
+                <a href="${appData.profile.linkedin}" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-400 text-slate-300 transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin text-cyan-400"></i> LinkedIn Profile
+                </a>
+            `;
+        }
+
+        // PROJECT FILTERING & RENDERING
+        function setProjectFilter(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('#projectCategoryFilters button').forEach(btn => {
+                if (btn.innerText.includes(cat)) {
+                    btn.className = "filter-btn active-filter px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-cyan-500 text-black font-semibold";
+                } else {
+                    btn.className = "filter-btn px-3 py-1.5 rounded-lg text-xs font-mono transition-all bg-slate-800 text-slate-300 hover:text-white";
+                }
+            });
+            renderFilteredProjects();
+        }
+
+        function filterProjects() {
+            renderFilteredProjects();
+        }
+
+        function renderFilteredProjects() {
+            const searchQuery = document.getElementById('projectSearchInput')?.value.toLowerCase() || "";
+            
+            const filtered = appData.projects.filter(p => {
+                const matchesCat = currentFilter === 'All' || p.category.toLowerCase().includes(currentFilter.toLowerCase());
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery) || 
+                                      p.description.toLowerCase().includes(searchQuery) ||
+                                      p.tech.some(t => t.toLowerCase().includes(searchQuery));
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                document.getElementById('projects-grid').innerHTML = `
+                    <div class="col-span-full glass-panel p-8 text-center text-slate-500 font-mono text-sm rounded-2xl">
+                        No projects found matching criteria.
+                    </div>
+                `;
+                return;
+            }
+
+            const projectsHtml = filtered.map(p => `
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-4 border border-slate-800 glass-panel-hover transition-all flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-cyan-950/60 text-cyan-400 border border-cyan-500/30">
+                                ${p.category}
+                            </span>
+                            ${p.github ? `
+                                <a href="${p.github}" target="_blank" class="text-slate-400 hover:text-cyan-400 text-lg transition-colors" title="View Source Code">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            ` : ''}
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">${p.title}</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">${p.description}</p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-slate-800/80">
+                        <div class="flex flex-wrap gap-1.5">
+                            ${p.tech.map(t => `<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">${t}</span>`).join('')}
+                        </div>
+                        ${p.github ? `
+                            <a href="${p.github}" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 hover:underline pt-1">
+                                View GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('projects-grid').innerHTML = projectsHtml;
+        }
+
+        // MOBILE MENU TOGGLE
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // ADMIN MODAL LOGIC
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+            if (isAdminLoggedIn) {
+                document.getElementById('adminAuthScreen').classList.add('hidden');
+                document.getElementById('adminDashboardScreen').classList.remove('hidden');
+                renderAdminDashboard();
+            } else {
+                document.getElementById('adminAuthScreen').classList.remove('hidden');
+                document.getElementById('adminDashboardScreen').classList.add('hidden');
+            }
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function authenticateAdmin() {
+            const pass = document.getElementById('adminPasswordInput').value;
+            if (pass === 'balti123') {
+                isAdminLoggedIn = true;
+                document.getElementById('adminAuthError').classList.add('hidden');
+                document.getElementById('adminAuthScreen').classList.add('hidden');
+                document.getElementById('adminDashboardScreen').classList.remove('hidden');
+                document.getElementById('adminBtnText').innerText = "Admin Active";
+                document.getElementById('adminAuthBtn').classList.add('bg-cyan-500/20');
+                renderAdminDashboard();
+            } else {
+                document.getElementById('adminAuthError').classList.remove('hidden');
+            }
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminBtnText').innerText = "Admin Console";
+            document.getElementById('adminAuthBtn').classList.remove('bg-cyan-500/20');
+            closeAdminModal();
+        }
+
+        function switchAdminTab(tabName) {
+            document.querySelectorAll('.admin-tab').forEach(b => {
+                b.className = "admin-tab border-b-2 border-transparent text-slate-400 hover:text-white pb-2 px-1";
+            });
+            document.getElementById(`tabBtn-${tabName}`).className = "admin-tab border-b-2 border-cyan-400 text-cyan-400 pb-2 px-1 font-bold";
+
+            document.getElementById('adminTab-projects').classList.add('hidden');
+            document.getElementById('adminTab-skills').classList.add('hidden');
+            document.getElementById('adminTab-bio').classList.add('hidden');
+
+            document.getElementById(`adminTab-${tabName}`).classList.remove('hidden');
+        }
+
+        function renderAdminDashboard() {
+            // Render Project List in Admin
+            const adminProjHtml = appData.projects.map(p => `
+                <div class="flex items-center justify-between p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+                    <div>
+                        <span class="font-bold text-white">${p.title}</span>
+                        <span class="text-cyan-400 font-mono ml-2">[${p.category}]</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="editProject('${p.id}')" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-cyan-400 font-mono">Edit</button>
+                        <button onclick="deleteProject('${p.id}')" class="px-2.5 py-1 rounded bg-pink-950/60 text-pink-400 hover:bg-pink-900 font-mono">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('adminProjectsList').innerHTML = adminProjHtml || '<p class="text-xs text-slate-500">No projects loaded.</p>';
+
+            // Render Skills in Admin
+            const adminSkillsHtml = appData.skills.map(sg => `
+                <div class="glass-panel p-3 rounded-lg border border-slate-800 space-y-2">
+                    <h5 class="text-xs font-mono font-bold text-cyan-400">${sg.category}</h5>
+                    <div class="flex flex-wrap gap-1.5">
+                        ${sg.items.map(item => `
+                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-[11px] text-slate-300">
+                                ${item}
+                                <i onclick="removeSkillTag('${sg.category}', '${item}')" class="fa-solid fa-xmark text-pink-400 cursor-pointer hover:text-pink-300"></i>
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('adminSkillsList').innerHTML = adminSkillsHtml;
+
+            // Bio Form Fill
+            document.getElementById('adminBioName').value = appData.profile.name;
+            document.getElementById('adminBioTitle').value = appData.profile.title;
+            document.getElementById('adminBioSummary').value = appData.profile.summary;
+            document.getElementById('adminBioEmail').value = appData.profile.email;
+            document.getElementById('adminBioPhone').value = appData.profile.phone;
+            document.getElementById('adminBioGithub').value = appData.profile.github;
+            document.getElementById('adminBioLinkedin').value = appData.profile.linkedin;
+        }
+
+        // ADMIN PROJECT ACTIONS
+        function saveProject() {
+            const editId = document.getElementById('editProjectId').value;
+            const title = document.getElementById('projTitle').value.trim();
+            const category = document.getElementById('projCategory').value.trim() || 'GenAI/RAG';
+            const description = document.getElementById('projDesc').value.trim();
+            const techStr = document.getElementById('projTech').value.trim();
+            const github = document.getElementById('projGithub').value.trim();
+
+            if (!title || !description) {
+                alert("Please fill in project title and description.");
+                return;
+            }
+
+            const tech = techStr ? techStr.split(',').map(t => t.trim()) : ["Python", "AI"];
+
+            if (editId) {
+                const idx = appData.projects.findIndex(p => p.id === editId);
+                if (idx !== -1) {
+                    appData.projects[idx] = { id: editId, title, category, description, tech, github };
+                }
+            } else {
+                const newProj = {
+                    id: 'proj_' + Date.now(),
+                    title, category, description, tech, github
+                };
+                appData.projects.unshift(newProj);
+            }
+
+            saveState();
+            clearProjectForm();
+            renderAdminDashboard();
+        }
+
+        function editProject(id) {
+            const proj = appData.projects.find(p => p.id === id);
+            if (!proj) return;
+            document.getElementById('editProjectId').value = proj.id;
+            document.getElementById('projTitle').value = proj.title;
+            document.getElementById('projCategory').value = proj.category;
+            document.getElementById('projDesc').value = proj.description;
+            document.getElementById('projTech').value = proj.tech.join(', ');
+            document.getElementById('projGithub').value = proj.github || '';
+        }
+
+        function deleteProject(id) {
+            if (confirm("Are you sure you want to delete this project?")) {
+                appData.projects = appData.projects.filter(p => p.id !== id);
+                saveState();
+                renderAdminDashboard();
+            }
+        }
+
+        function clearProjectForm() {
+            document.getElementById('editProjectId').value = '';
+            document.getElementById('projTitle').value = '';
+            document.getElementById('projCategory').value = '';
+            document.getElementById('projDesc').value = '';
+            document.getElementById('projTech').value = '';
+            document.getElementById('projGithub').value = '';
+        }
+
+        // ADMIN SKILL ACTIONS
+        function addSkillTag() {
+            const cat = document.getElementById('skillCategorySelect').value;
+            const name = document.getElementById('newSkillName').value.trim();
+            if (!name) return;
+
+            const group = appData.skills.find(s => s.category === cat);
+            if (group) {
+                if (!group.items.includes(name)) {
+                    group.items.push(name);
+                    saveState();
+                    renderAdminDashboard();
+                }
+            }
+            document.getElementById('newSkillName').value = '';
+        }
+
+        function removeSkillTag(category, skillName) {
+            const group = appData.skills.find(s => s.category === category);
+            if (group) {
+                group.items = group.items.filter(item => item !== skillName);
+                saveState();
+                renderAdminDashboard();
+            }
+        }
+
+        // ADMIN BIO ACTIONS
+        function saveBioData() {
+            appData.profile.name = document.getElementById('adminBioName').value;
+            appData.profile.title = document.getElementById('adminBioTitle').value;
+            appData.profile.summary = document.getElementById('adminBioSummary').value;
+            appData.profile.email = document.getElementById('adminBioEmail').value;
+            appData.profile.phone = document.getElementById('adminBioPhone').value;
+            appData.profile.github = document.getElementById('adminBioGithub').value;
+            appData.profile.linkedin = document.getElementById('adminBioLinkedin').value;
+
+            saveState();
+            alert("Bio and contact info updated successfully!");
+        }
+    </script>
+</body>
+</html>
